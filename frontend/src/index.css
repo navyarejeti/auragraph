@@ -1,0 +1,1032 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&family=Sora:wght@400;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #FFFFFF;
+  --surface: #F9FAFB;
+  --surface2: #F3F4F6;
+  --border: #E5E7EB;
+  --border2: #D1D5DB;
+  --text: #111827;
+  --text2: #4B5563;
+  --text3: #9CA3AF;
+  --accent: #111827;
+  --accent-h: #374151;
+  --danger: #EF4444;
+  --success: #10B981;
+  --radius: 10px;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --purple: #7C3AED;
+  --purple-light: #EDE9FE;
+  --note-bg: #FFFEF7;
+  --note-line: #E8E0CC;
+  /* AuraGraph design tokens */
+  --ag-purple: #7C3AED;
+  --ag-purple-soft: #EDE9FE;
+  --ag-cream: #FFFEF7;
+  --ag-surface-note: #FDFCFF;
+  --ag-ring-left: #C4B5FD;
+  --ag-ring-right: #A78BFA;
+  /* Extended purple palette — replaces all hardcoded hex in components */
+  --ag-purple-deep:    #4C1D95;
+  --ag-purple-medium:  #5B21B6;
+  --ag-purple-vivid:   #6D28D9;
+  --ag-purple-border:  #DDD6FE;
+  --ag-purple-bg:      #F5F3FF;
+  --ag-purple-bg2:     #EDE9FE;
+  --ag-purple-ring:    #C4B5FD;
+
+  --ag-gold: #F59E0B;
+  --ag-emerald: #10B981;
+  --ag-red: #EF4444;
+}
+
+[data-theme="dark"] {
+  --bg: #0F0F13;
+  --surface: #17171D;
+  --surface2: #1E1E27;
+  --border: #2A2A38;
+  --border2: #35354A;
+  --text: #F0F0F5;
+  --text2: #A8A8C0;
+  --text3: #5C5C80;
+  --accent: #A78BFA;
+  --accent-h: #8B5CF6;
+  --danger: #F87171;
+  --success: #34D399;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --note-bg: #13131A;
+  --note-line: #1E1E2E;
+}
+
+body {
+  font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 18px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  border: none;
+  font-family: inherit;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+[data-theme="dark"] .btn-primary {
+  color: #0F0F13;
+}
+
+.btn-primary:hover {
+  background: var(--accent-h);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+}
+
+.btn-secondary {
+  background: var(--surface2);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  background: var(--border);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text2);
+  border: 1px solid transparent;
+}
+
+.btn-ghost:hover {
+  background: var(--surface2);
+}
+
+.btn-danger {
+  background: transparent;
+  color: var(--danger);
+  border: 1px solid #fecaca;
+}
+
+.btn-danger:hover {
+  background: #fef2f2;
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
+.btn-lg {
+  padding: 12px 24px;
+  font-size: 15px;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--border2);
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--text);
+  background: var(--bg);
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.input:focus {
+  border-color: var(--purple);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.12);
+}
+
+.input::placeholder {
+  color: var(--text3);
+}
+
+.card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text2);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  backdrop-filter: blur(4px);
+}
+
+.modal {
+  background: var(--bg);
+  border-radius: 16px;
+  padding: 28px;
+  width: 480px;
+  max-width: 94vw;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--border);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(124, 58, 237, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 0 6px rgba(124, 58, 237, 0.15);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes streak-fire {
+
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+
+  50% {
+    transform: scaleY(1.12);
+  }
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.25s ease-out;
+}
+
+.fade-in-scale {
+  animation: fadeInScale 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.shimmer {
+  background: linear-gradient(90deg, var(--surface2) 25%, var(--border) 50%, var(--surface2) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border2);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text3);
+}
+
+.sidebar-panel {
+  /* width / min-width are now controlled by inline style (resizable) */
+  border-left: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  overflow: hidden;
+  transition: width 0.22s ease, min-width 0.22s ease, opacity 0.18s ease;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.sidebar-panel.collapsed {
+  width: 0 !important;
+  min-width: 0 !important;
+  opacity: 0;
+  border-left: none;
+  pointer-events: none;
+}
+
+.sidebar-resize-handle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  cursor: col-resize;
+  z-index: 20;
+  background: transparent;
+  transition: background 0.15s;
+}
+
+.sidebar-resize-handle:hover,
+.sidebar-resize-handle.dragging {
+  background: var(--purple);
+  opacity: 0.5;
+}
+
+.page-dot {
+  position: relative;
+  cursor: pointer;
+}
+
+.page-dot:hover::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--text);
+  color: var(--bg);
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 10;
+}
+
+kbd {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-size: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--text2);
+  box-shadow: 0 1px 0 var(--border2);
+}
+
+.streak-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #FF6B35, #FF4500);
+  color: #fff;
+  box-shadow: 0 2px 12px rgba(255, 107, 53, 0.35);
+  animation: streak-fire 2s ease-in-out infinite;
+}
+
+.sniper-option {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 2px solid var(--border);
+  cursor: pointer;
+  transition: all 0.15s;
+  font-size: 13px;
+  color: var(--text2);
+  background: var(--surface);
+  text-align: left;
+  width: 100%;
+  font-family: inherit;
+}
+
+.sniper-option:hover {
+  border-color: var(--purple);
+  background: var(--purple-light);
+  color: var(--purple);
+  transform: translateX(3px);
+}
+
+.sniper-option.correct {
+  border-color: #10B981;
+  background: #DCFCE7;
+  color: #065F46;
+}
+
+.sniper-option.wrong {
+  border-color: #EF4444;
+  background: #FEF2F2;
+  color: #991B1B;
+}
+
+[data-theme="dark"] .sniper-option.correct {
+  background: #052e16;
+}
+
+[data-theme="dark"] .sniper-option.wrong {
+  background: #1c0a09;
+}
+
+.progress-bar-track {
+  height: 6px;
+  background: var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ─── KaTeX dark-mode fix — formulas invisible on dark background ─────────── */
+/* The note page (.note-page-content) always renders on a white card in light
+   mode. In dark mode we invert the card background to near-black, so KaTeX's
+   default black glyphs become invisible. Force KaTeX text to use a visible
+   colour that adapts to the current theme. */
+[data-theme="dark"] .katex,
+[data-theme="dark"] .katex-display,
+[data-theme="dark"] .katex .mord,
+[data-theme="dark"] .katex .mrel,
+[data-theme="dark"] .katex .mopen,
+[data-theme="dark"] .katex .mclose,
+[data-theme="dark"] .katex .mbin,
+[data-theme="dark"] .katex .mpunct,
+[data-theme="dark"] .katex .minner,
+[data-theme="dark"] .katex .mop,
+[data-theme="dark"] .katex .mfrac,
+[data-theme="dark"] .katex .msqrt,
+[data-theme="dark"] .katex .msupsub,
+[data-theme="dark"] .katex .mspace,
+[data-theme="dark"] .katex span {
+  color: #E4E4F0 !important;
+}
+
+[data-theme="dark"] .katex-display {
+  background: rgba(124, 58, 237, 0.06);
+  border-radius: 6px;
+  padding: 6px 12px;
+}
+
+/* Inline math in note cards - cards have white bg in light, dark bg in dark */
+[data-theme="dark"] .note-page-card {
+  background: #13131A !important;
+  border-color: #2A2A38 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), 0 12px 40px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme="dark"] .note-page-card .note-header-bar {
+  border-bottom-color: #2A2A38 !important;
+}
+
+[data-theme="dark"] .note-page-card .note-footer-bar {
+  border-top-color: #2A2A38 !important;
+}
+
+/* NoteRenderer uses hardcoded colours — override for dark */
+[data-theme="dark"] .note-page-card p,
+[data-theme="dark"] .note-page-card li,
+[data-theme="dark"] .note-page-card span:not(.katex *) {
+  color: var(--nr-text);
+}
+
+[data-theme="dark"] .note-page-card h1,
+[data-theme="dark"] .note-page-card h2 {
+  color: var(--nr-text-h) !important;
+}
+
+[data-theme="dark"] .note-page-card code {
+  background: var(--nr-surface) !important;
+  color: var(--nr-text) !important;
+}
+
+[data-theme="dark"] .note-page-card blockquote {
+  background: var(--nr-surface) !important;
+  border-left-color: var(--purple) !important;
+  color: var(--nr-text) !important;
+}
+
+[data-theme="dark"] .note-page-card strong {
+  color: var(--nr-text-h) !important;
+}
+
+:root {
+  /* NoteRenderer — markdown component colours */
+  --nr-text: #18181B;
+  --nr-text-h: #000000;
+  --nr-text-muted: #71717A;
+  --nr-text-med: #3F3F46;
+  --nr-surface: #F4F4F5;
+  --nr-border: #E4E4E7;
+  --nr-border-th: #D4D4D8;
+  --nr-formula-bg: #EFF6FF;
+  --nr-formula-border: #BFDBFE;
+  --nr-formula-accent: #2563EB;
+  --nr-formula-text: #1E3A8A;
+  --nr-warn-bg: #FFF7ED;
+  --nr-warn-border: #FED7AA;
+  --nr-warn-accent: #F97316;
+  --nr-warn-text: #7C2D12;
+  --nr-link: #2563EB;
+
+  /* Semantic callout boxes (doubt answers, banners, MCQ feedback) */
+  --callout-info-bg: #F0F9FF;
+  --callout-info-border: #BAE6FD;
+  --callout-info-text: #0C4A6E;
+  --callout-info-label: #0369A1;
+  --callout-warn-bg: #FFFBEB;
+  --callout-warn-border: #FDE68A;
+  --callout-warn-text: #92400E;
+  --callout-err-bg: #FEF2F2;
+  --callout-err-border: #FECACA;
+  --callout-err-text: #991B1B;
+  --callout-err-text2: #7F1D1D;
+  --callout-success-bg: #DCFCE7;
+  --callout-success-border: #BBF7D0;
+  --callout-success-text: #065F46;
+  --callout-success-label: #166534;
+
+  /* Upload drop zone / file chip */
+  --zone-files-bg: #F0FDF4;
+  --file-chip-bg: #ffffff;
+  --file-chip-border: #d1fae5;
+  --file-chip-text: #065f46;
+}
+
+[data-theme="dark"] {
+  /* NoteRenderer */
+  --nr-text: #E4E4F0;
+  --nr-text-h: #F8F8FF;
+  --nr-text-muted: #9090B0;
+  --nr-text-med: #B0B0C8;
+  --nr-surface: #1E1E2A;
+  --nr-border: #2C2C3C;
+  --nr-border-th: #3A3A50;
+  --nr-formula-bg: #071428;
+  --nr-formula-border: #1e3a6a;
+  --nr-formula-accent: #60a5fa;
+  --nr-formula-text: #93c5fd;
+  --nr-warn-bg: #180e00;
+  --nr-warn-border: #7c3300;
+  --nr-warn-accent: #f97316;
+  --nr-warn-text: #fed7aa;
+  --nr-link: #60a5fa;
+
+  /* Semantic callouts */
+  --callout-info-bg: #071828;
+  --callout-info-border: #1e4a6a;
+  --callout-info-text: #7dd3fc;
+  --callout-info-label: #38bdf8;
+  --callout-warn-bg: #1a1200;
+  --callout-warn-border: #5c4600;
+  --callout-warn-text: #fde68a;
+  --callout-err-bg: #1c0a09;
+  --callout-err-border: #5a1d1d;
+  --callout-err-text: #fca5a5;
+  --callout-err-text2: #fca5a5;
+  --callout-success-bg: #052e16;
+  --callout-success-border: #14532d;
+  --callout-success-text: #6ee7b7;
+  --callout-success-label: #6ee7b7;
+
+  /* Drop zone / file chip */
+  --zone-files-bg: #071a0e;
+  --file-chip-bg: #1E1E27;
+  --file-chip-border: #064e3b;
+  --file-chip-text: #34d399;
+
+  /* Purple accent for "Mutated" badge */
+  --purple-light: #2a1a4a;
+}
+
+/* ─── Print / Export PDF ──────────────────────────────────────────────────── */
+/* ─── Print root (hidden on screen, shown in print) ──────────────────────── */
+/* Using @media screen to hide rather than display:none so it still              */
+/* participates in the print layout when @media print overrides it.              */
+@media screen {
+  #ag-print-root {
+    display: none;
+  }
+}
+
+/* ─── Print / Export PDF ──────────────────────────────────────────────────── */
+@media print {
+  html,
+  body,
+  #root,
+  .notebook-workspace-root {
+    height: auto !important;
+    min-height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* Print only the dedicated print tree; removing sibling layout prevents
+     browser pagination from creating leading/intermediate blank pages. */
+  .notebook-workspace-root > * {
+    display: none !important;
+  }
+
+  .notebook-workspace-root > #ag-print-root {
+    display: block !important;
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    background: #fff !important;
+  }
+
+  .notebook-workspace-root > #ag-print-root,
+  .notebook-workspace-root > #ag-print-root * {
+    visibility: visible !important;
+  }
+
+  /* Each note page fills its own printed page */
+  .ag-print-page {
+    padding: 14mm 18mm;
+    break-after: page;
+  }
+
+  .ag-print-page:last-child {
+    break-after: auto;
+  }
+
+  /* Keep semantic blocks together where possible during print pagination. */
+  #ag-print-root .nr-keep-together,
+  #ag-print-root .nr-callout,
+  #ag-print-root figure,
+  #ag-print-root table,
+  #ag-print-root pre,
+  #ag-print-root .katex-display,
+  #ag-print-root .katex-display > .katex {
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+
+  /* Avoid splitting a display formula from the content immediately around it. */
+  #ag-print-root .katex-display {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  /* Improve paragraph pagination quality. */
+  #ag-print-root p,
+  #ag-print-root li {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* KaTeX colours */
+  #ag-print-root .katex,
+  #ag-print-root .katex span {
+    color: #000 !important;
+  }
+
+  #ag-print-root .katex-display {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Callout / blockquote backgrounds */
+  #ag-print-root blockquote {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+
+/* ─── Undo Toast animation ────────────────────────────────────────────────── */
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ─── Mobile layout ───────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+  /* Hide right sidebar on small screens */
+  .sidebar-panel {
+    display: none !important;
+  }
+
+  /* Compact header padding */
+  header {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  /* Note area fills full width */
+  .note-area {
+    min-width: 0 !important;
+    flex: 1 !important;
+    padding: 12px !important;
+  }
+
+  /* Resize handle irrelevant on mobile */
+  .sidebar-resize-handle {
+    display: none !important;
+  }
+
+  /* Narrower modal */
+  .modal {
+    max-width: 95vw !important;
+    margin: 0 auto;
+  }
+
+  /* Upload zone */
+  .upload-zone {
+    padding: 16px !important;
+  }
+
+  /* Stats row wrap */
+  .stats-row {
+    flex-wrap: wrap !important;
+  }
+
+  /* Dashboard main padding */
+  main {
+    padding: 20px 12px !important;
+  }
+}
+/* ─── Annotation highlights ───────────────────────────────────────────────── */
+mark[data-ann-id] {
+  border-radius: 3px;
+  padding: 1px 2px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+mark[data-ann-id]:hover {
+  opacity: 0.75;
+}
+
+/* Highlights print correctly */
+@media print {
+  mark[data-ann-id] {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+/* ─── Annotation toolbar dropdown animation ───────────────────────────────── */
+/* reuses the existing slideUpFade keyframe */
+
+/* ─── Sticky note canvas pointer passthrough ──────────────────────────────── */
+.note-page-card canvas {
+  border-radius: 6px;
+}
+
+/* ─── KaTeX overflow fix ───────────────────────────────────────────────────── */
+/* Display math ($$...$$) can be very wide — scroll it horizontally
+   inside its own block without breaking the card layout */
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 4px; /* breathing room for scrollbar */
+  max-width: 100%;
+}
+
+/* Inline math — never let it overflow the line */
+.katex:not(.katex-display .katex) {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* Note content area — clip to card, never let math push outside */
+.note-page-card > div:last-of-type {
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+/* ─── Aura gamification animations ─────────────────────────────────────────── */
+@keyframes xpPop {
+  0%   { opacity: 0; transform: translateY(16px) scale(0.8); }
+  60%  { opacity: 1; transform: translateY(-4px) scale(1.05); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes slideDownFade {
+  to { opacity: 0; transform: translateY(20px); }
+}
+
+/* Midnight theme — invert text on dark card */
+.note-theme-midnight {
+  color-scheme: dark;
+}
+.note-theme-midnight .note-page-card {
+  color: #E2E8F0 !important;
+}
+.note-theme-midnight .note-page-card p,
+.note-theme-midnight .note-page-card li,
+.note-theme-midnight .note-page-card span:not(.katex *),
+.note-theme-midnight .note-page-card h1,
+.note-theme-midnight .note-page-card h2,
+.note-theme-midnight .note-page-card h3 {
+  color: #E2E8F0 !important;
+}
+
+/* Study Hub button — first-time attention pulse */
+@keyframes studyhub-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.45); }
+  60%  { box-shadow: 0 0 0 7px rgba(124, 58, 237, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0); }
+}
+
+/* ── Login page responsive ─────────────────────────────────────────── */
+.login-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+@media (max-width: 820px) {
+    .login-grid {
+        grid-template-columns: 1fr;
+    }
+    .login-grid > :first-child {
+        display: none;
+    }
+}
+
+/* ── Global UX polish ───────────────────────────────────────────────── */
+
+/* Better focus ring — consistent purple across all inputs */
+.input:focus {
+  border-color: var(--ag-purple);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.14);
+  outline: none;
+}
+
+/* Error input state */
+.input.input-error,
+.input-error {
+  border-color: var(--ag-red) !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12) !important;
+}
+
+/* Label weight */
+label {
+  font-weight: 600;
+}
+
+/* Card hover — uniform lift across all .card elements */
+.card {
+  transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* Button micro-interactions */
+.btn {
+  transition: all 0.15s ease;
+}
+.btn:not(:disabled):active {
+  transform: scale(0.97);
+}
+
+/* Modal animation */
+.fade-in-scale {
+  animation: fadeInScale 0.18s ease;
+}
+
+/* Smooth scrollbar (webkit) */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--ag-purple-ring); }
+
+/* Note page card — remove default card hover (notes shouldn't lift) */
+.note-page-card:hover {
+  transform: none;
+}
+
+/* Tooltip-like title enhancement */
+[title]:hover {
+  cursor: help;
+}
+[title][role="button"]:hover,
+button[title]:hover {
+  cursor: pointer;
+}
+
+/* ── Feedback widget animations ─────────────────────────────────────────── */
+@keyframes feedbackSlideUp {
+    from { opacity: 0; transform: translateY(12px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0)    scale(1);    }
+}
+@keyframes feedbackPulse {
+    0%, 100% { transform: scale(1);    opacity: 1;   }
+    50%       { transform: scale(1.4); opacity: 0.6; }
+}
+
+/* ── Short notes cheatsheet content ─────────────────────────────────────── */
+.short-notes-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 13px;
+}
+.short-notes-content th {
+    background: var(--ag-purple-bg);
+    color: var(--ag-purple-medium);
+    padding: 6px 12px;
+    text-align: left;
+    font-weight: 700;
+    border-bottom: 2px solid var(--ag-purple-border);
+}
+.short-notes-content td {
+    padding: 6px 12px;
+    border-bottom: 1px solid var(--border);
+}
+
+/* ── TTS Audio Player animations ────────────────────────────────────────── */
+@keyframes ttsBar1 { from { height: 4px; } to { height: 14px; } }
+@keyframes ttsBar2 { from { height: 6px; } to { height: 18px; } }
+@keyframes ttsBar3 { from { height: 8px; } to { height: 12px; } }
+@keyframes ttsBar4 { from { height: 5px; } to { height: 16px; } }
+@keyframes ttsWave { 0%,100% { opacity: 1; } 50% { opacity: 0.5; } }

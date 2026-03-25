@@ -1,0 +1,73 @@
+{
+  "id": "771cfa8e-1e9b-48c2-965b-43e526698041",
+  "type": "behaviour",
+  "doubts": [
+    {
+      "ts": "2026-03-21T06:33:06.455415+00:00",
+      "notebook_id": "ba724927-3b38-4e17-93a4-d66c88c5d550",
+      "topic": "what are log-odds",
+      "question": "what are log-odds",
+      "page_idx": 0
+    },
+    {
+      "ts": "2026-03-21T06:34:09.607806+00:00",
+      "notebook_id": "ba724927-3b38-4e17-93a4-d66c88c5d550",
+      "topic": "what are log-odds",
+      "question": "what are log-odds",
+      "page_idx": 0
+    },
+    {
+      "ts": "2026-03-21T06:37:10.113885+00:00",
+      "notebook_id": "ba724927-3b38-4e17-93a4-d66c88c5d550",
+      "topic": "likelihood means??",
+      "question": "likelihood means??",
+      "page_idx": 0
+    },
+    {
+      "ts": "2026-03-21T06:37:27.243515+00:00",
+      "notebook_id": "ba724927-3b38-4e17-93a4-d66c88c5d550",
+      "topic": "likelihood means??",
+      "question": "likelihood means??",
+      "page_idx": 0
+    },
+    {
+      "ts": "2026-03-21T10:33:14.372576+00:00",
+      "notebook_id": "4b8ea7da-7929-4ae2-be37-d93e374752c7",
+      "topic": "what are measurable spaces",
+      "question": "what are measurable spaces",
+      "page_idx": 0
+    },
+    {
+      "ts": "2026-03-21T12:34:18.497733+00:00",
+      "notebook_id": "80701701-ba41-49b7-857f-b94195d74a18",
+      "topic": "what is the formula of hypotenuse",
+      "question": "what is the formula of hypotenuse",
+      "page_idx": 0
+    },
+    {
+      "ts": "2026-03-21T12:35:20.866318+00:00",
+      "notebook_id": "80701701-ba41-49b7-857f-b94195d74a18",
+      "topic": "what is the formula of hypotenuse",
+      "question": "what is the formula of hypotenuse",
+      "page_idx": 0
+    }
+  ],
+  "quiz_answers": [],
+  "highlights": [],
+  "sessions": [],
+  "profile": {
+    "learning_style": "balanced",
+    "weak_concepts": [
+      "what are log-odds",
+      "likelihood means??",
+      "what is the formula of hypotenuse"
+    ],
+    "strong_concepts": [],
+    "preferred_proficiency": "Foundations",
+    "total_doubts": 7,
+    "total_correct": 0,
+    "total_questions": 0,
+    "accuracy": 0.0,
+    "last_updated": "2026-03-21T12:35:20.866366+00:00"
+  }
+}
